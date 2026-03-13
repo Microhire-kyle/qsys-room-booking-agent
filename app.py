@@ -12,7 +12,7 @@ WEBHOOK_KEY = os.environ.get("WEBHOOK_KEY", "change-me-long-random-secret")
 GRACE_BEFORE_MIN = int(os.environ.get("GRACE_BEFORE_MIN", "10"))
 GRACE_AFTER_MIN = int(os.environ.get("GRACE_AFTER_MIN", "10"))
 
-app = FastAPI(title="Microhire Venue Agent (Local Test)")
+app = FastAPI(title="Microhire Venue Agent")
 
 
 class BookingIn(BaseModel):
@@ -239,4 +239,5 @@ def room_state(room_id: str):
             "sessionPin": "",
             "endsAtEpoch": 0
         }
+
     return state
